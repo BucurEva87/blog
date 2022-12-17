@@ -1,37 +1,8 @@
 <a name="readme-top"></a>
 
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
-
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
   <h3><b>Microverse README Template</b></h3>
-
 </div>
-
-<!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
@@ -55,19 +26,17 @@ After you're finished please remove all the comments and instructions!
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-<!-- PROJECT DESCRIPTION -->
+# 📖 [Blog] <a name="about-project"></a>
 
-# 📖 [your_project_name] <a name="about-project"></a>
+> Here is a quick description of this project:
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+**[Blog]** is an application written in Ruby on Rails that allows for a user account, comments, likes and is based on the model view controller paradigm.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+> Here is the tech stack used for this project:
 
 <details>
   <summary>Client</summary>
@@ -79,7 +48,7 @@ After you're finished please remove all the comments and instructions!
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
@@ -90,33 +59,27 @@ After you're finished please remove all the comments and instructions!
   </ul>
 </details>
 
-<!-- Features -->
-
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+> Descriptions of some features of this application
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[Allows users to register an account and log in]**
+- **[Allows users to write posts and comments]**
+- **[Allows users to like other posts or comments]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
+<!-- ## 🚀 Live Demo <a name="live-demo"></a>
 
 > Add a link to your deployed project.
 
 - [Live Demo Link](https://yourdeployedapplicationlink.com)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
+> Here are the steps you need to take in order to be able to get started with this project:
 
 To get a local copy up and running, follow these steps.
 
@@ -124,57 +87,41 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- Ruby
+- Rails
+- Postgresql
+- Node
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/BucurEva87/blog.git
+  cd blog
 ```
---->
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
-
 ```sh
-  cd my-project
+  cd blog
   gem install
 ```
---->
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
 ```sh
-  rails server
+  rails s
 ```
---->
 
-### Run tests
+<!-- ### Run tests
 
 To run tests, run the following command:
 
-<!--
 Example command:
 
 ```sh
@@ -182,11 +129,10 @@ Example command:
 ```
 --->
 
-### Deployment
+<!-- ### Deployment
 
 You can deploy this project using:
 
-<!--
 Example:
 
 ```sh
@@ -196,29 +142,19 @@ Example:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
-
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+> People collaborating on this project:
 
-👤 **Author1**
+👤 **Eva Buccur**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@BucurEva87](https://github.com/BucurEva87)
+- Twitter: [@BucurEva](https://twitter.com/BucurEva)
+- LinkedIn: [Eva-Lavinia Bucur](https://www.linkedin.com/in/eva-lavinia-bucur)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
+<!-- ## 🔭 Future Features <a name="future-features"></a>
 
 > Describe 1 - 3 features you will add to the project.
 
@@ -226,9 +162,7 @@ Example:
 - [ ] **[new_feature_2]**
 - [ ] **[new_feature_3]**
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -237,8 +171,6 @@ Contributions, issues, and feature requests are welcome!
 Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
@@ -279,7 +211,5 @@ I would like to thank...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
