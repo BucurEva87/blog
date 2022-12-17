@@ -37,17 +37,17 @@ RSpec.describe User, type: :model do
     expect(subject).to be_valid
   end
 
-  it 'returns post counter as an integer' do
+  it 'returns posts_counter as an integer' do
     subject.posts_counter = 6
     expect(subject).to be_valid
   end
 
-  it 'is not valid if post counter is a string' do
-    subject.posts_counter = '5'
+  it 'is not valid if posts_counter is a string' do
+    subject.posts_counter = 'six'
     expect(subject).to_not be_valid
   end
 
-  it 'is not valid if post counter is nil' do
+  it 'is not valid if posts_counter is nil' do
     subject.posts_counter = nil
     expect(subject).to_not be_valid
   end

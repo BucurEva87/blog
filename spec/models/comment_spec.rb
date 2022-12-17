@@ -28,9 +28,9 @@ RSpec.describe Comment, type: :model do
     )
   end
 
-  it 'is not valid without a text' do
-    comment.text = nil
-    expect(comment).to_not be_valid
+  it 'is valid with a text' do
+    comment.text = 'I hope everything is ok there. Nice post, anyway!'
+    expect(comment).to be_valid
   end
 
   it 'is only valid with a user' do
