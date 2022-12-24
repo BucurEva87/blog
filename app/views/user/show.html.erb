@@ -1,53 +1,51 @@
-<div class="d-flex mt-4 shadow p-3 mb-5 bg-body rounded">
-    <%= image_tag(@user.photo, class: "w-25 h-25 me-3") %>
-    <div class="d-flex flex-column mw-100 flex-fill justify-content-center">
-        <h1 class="g-start-2" style="grid-row: 2"> <%= @user.name %>  </h1>
-        <span class="align-self-end"> Number of Posts: <%= @user.posts_counter%> </span>
-    </div>
-</div>
-<div class="mb-4 shadow p-3 mb-5 bg-body rounded">
-    <h3> Bio </h3>
-    <p> <%= @user.bio %> </p>
-</div>
-<% @user.recent_post.each_with_index do |post,index|%>
-    <%= link_to user_post_path(@user, post), class:"text-decoration-none"  do %>
-    <div class="mb-5 d-flex flex-column shadow p-3 mb-5 bg-body rounded">
-        <span> Post # <%= index+1 %> </span>
-        <h2> <%= post.title %></h2>
-        <p> <%= post.text %> </p>
-        <div class="align-self-end">
-            <span>Comments: <%= post.comments_counter %> </span> <span> Likes: <%= post.likes_counter %> </span>
+<% @title="Marvel Blog | #{@user.name}" %>
+<div class='mt-3 d-flex align-items-center flex-column'>
+  <div class="card mb-3 border-primary" style="width: 680px;">
+    <div class="row g-0">
+      <div class="col-md-3">
+        <img src="<%= @user.photo %>" class="img-fluid rounded-start" alt="Photo">
+      </div>
+      <div class="col-md-4">
+        <div class="card-body">
+          <h2 class="card-title"><%= @user.name %></h2>
         </div>
-    </div>
-    <% end %>
-
-<div class="mx-auto" style="width: 200px;">
-<%= link_to "See all posts", user_posts_path(@user), class: "btn btn-dark mb-4" %>
-</div>
-<% end %>
-
-<div class="mt-4 shadow p-3 mb-5 bg-body rounded">
-<h2> Create Post </h2>
-<%= form_with model: @post, url: user_posts_path(Current.user), data: { turbo: false} do |form| %>
-    <% if @post.errors.any? %>
-        <div class="alert alert-danger">
-            <% @post.errors.full_messages do |message| %>
-                <div> <%= message %> </div>
-            <% end %>
+        <div class='d-flex justify-content-end' style="width: 350px;">
+          <p class="card-text"><small class="text-muted">Number of posts: <%= @user.posts_counter %></small></p>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mb-3 border-info" style="width: 680px;">
+    <div class='card-header bg-info'>Bio</div>
+    <div class="card-body">
+      <p class="card-text"><%= @user.bio %></p>
+    </div>
+  </div>
+  <h3>Recent Posts</h3>
+  <% if @user.most_recent_posts.empty? %>
+    <div class="card mb-3 border-danger" style="width: 540px;">
+      <div class="card-header bg-danger text-white">No Post Found</div>
+      <div class="card-body">
+        <h5 class="card-title text-danger">Please first submit a post then come back to this page thanks.</h5>
+      </div>
+    </div>
+  <% else %>
+    <% @user.most_recent_posts.each do |post| %>
+      <%= link_to user_post_url(user_id:@user.id, id: post.id), class:'nav-link' do%>
+        <div class="card mb-3 border-success" style="width: 540px;">
+          <div class="card-header bg-success text-white"><%= post.title %></div>
+          <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p class="card-text"><%= post.text.slice(0,70)%> ...</p>
+          </div>
+          <div class='card-footer d-flex gap-2 justify-content-end'>
+            <p class="card-text"><small class="text-muted">Comments: <%= post.comments_counter %></small></p>
+            |
+            <p class="card-text"><small class="text-muted">Likes: <%= post.likes_counter %></small></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-    <div class="mb-3">
-        <%= form.label :title, class: "form-label" %>
-        <%= form.text_field :title, class: "form-control", id: "exampleFormControlInput1", placeholder: "Post Title" %>
-    </div>
-    <div class="mb-3">
-        <%= form.label :text, class: "form-label" %>
-        <%= form.text_field :text, class: "form-control", id: "exampleFormControlInput2", placeholder: "Post Text" %>
-    </div>
-    <%= form.submit "Create Post", class:"btn btn-primary" %>
-<% end %>
-</div>
-
-<div class="mx-auto" style="width: 200px;">
-<%= link_to "See all posts", user_posts_path(@user), class: "btn btn-dark mb-4" %>
+  <% end %>
+  <%= link_to "Show all Posts", user_posts_path(user_id: @user.id), class:"btn btn-primary mb-3" %>
 </div>

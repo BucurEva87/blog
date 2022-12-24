@@ -1,18 +1,16 @@
 class LikesController < ApplicationController
-  def create
-    @post = Post.find(params[:post_id])
-    @author = User.find(params[:user_id])
-    @like = @post.likes.new(post: @post, author: @author)
-    if @like.save
-      redirect_to request.referrer
-    else
-      render plain: @like.errors.messages
-    end
+  def new
+    @like = Like.new
   end
 
-  private
+  def create
+    @post = Post.find(params[:post_id])
+    @like = @post.likes.new(author_id: Current.user.id, post_id: @post.id)
 
-  def like_params
-    params.require(:like).permit(:post_id, :user_id)
+    if @like.save
+      redirect_to "/users/#{@post.author.id}/posts/#{@post.id}"
+    else
+      render :new
+    end
   end
 end
