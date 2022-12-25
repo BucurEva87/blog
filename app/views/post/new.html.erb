@@ -1,21 +1,15 @@
-<button class="button"><%= link_to "Back to posts", user_posts_path %></button>
-
-<%= form_with(model: Post.new, url: user_posts_path, method: :post) do |f| %>
-  <% if flash[:error] %>
-    <p><%= flash[:error]%> </p>
+<% @title="Marvel Blog | Add Post" %>
+<div class='mt-3 d-flex align-items-center flex-column'>
+  <h1>Create New Post</h1>
+  <%= form_with model: @post, url: user_posts_path do |f| %>
+    <div class="mb-3">
+      <%= f.text_field :title, placeholder:"Enter Post Title", class:"form-control"%>
+    </div>
+    <div class="mb-3">
+      <%= f.text_area :text, size:"70x6" ,placeholder:"Enter Your Post", class:"form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= f.submit "Add New Post", class:"btn btn-primary" %>
+    </div>
   <% end %>
-
-  <p>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  </p>
-
-  <p>
-  <%= f.label :text %>
-  <%= f.text_area :text %>
-  </p>
-  <p>
-  <%= f.submit %>
-  </p>
-
-<% end %>
+</div>
